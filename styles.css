@@ -1,0 +1,169 @@
+:root {
+    --sel-width: 30vw;
+}
+
+@font-face {
+    font-family: NexaBold;
+    src: url(assets/font/nexa-bold.ttf);
+}
+
+body {
+    font-family: NexaBold;
+    font-size: large;
+
+    cursor: default;
+    
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(196, 196, 196);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(158, 158, 158);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(121, 121, 121);
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+select {
+    font-family: NexaBold;
+    font-size: large;
+
+    border: none;
+}
+
+button {
+    font-family: NexaBold;
+    font-size: larger;
+    width: 100px;
+    height: 50px;
+
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+input {
+    font-family: NexaBold;
+    font-size: medium;
+    width: 50px;
+    height: 20px;
+
+    border: none;
+}
+
+#loading {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    width: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1001;
+
+    background-color: black;
+    color: white;
+}
+
+#loading span {
+    text-align: center;
+}
+
+.sel {
+    float: left;
+    width: var(--sel-width);
+    height: 100vh;
+
+    background-color: rgb(196, 196, 196);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+
+    position: fixed;
+}
+
+.grid {
+    float: right;
+    width: calc(100vw - var(--sel-width));
+    height: 100vh;
+
+    text-align: center;
+}
+
+.fillGrid {
+    position: absolute;
+
+    width: calc(100vw - var(--sel-width));
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sel div, .grid div {
+    text-align: center;
+}
+
+#infoButton, #backButton {
+    transition: 0.1s ease-in-out;
+
+    width: 25px; 
+    height: 25px; 
+    background-color: #00000000; 
+    border: none;
+}
+
+#infoButton:hover, #backButton:hover {
+    filter: brightness(1.2);
+    transform: scale(1.0);
+}
+
+#cover {
+    width: var(--sel-width);
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    display: none;
+    background-color: #0000007a; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#information {
+    display: block;
+    padding: 0vw 10vw
+}

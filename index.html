@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Neighborhood Simulator</title>
+    <meta charset="UTF-8">
+    <meta content="Neighborhood Simulator" property="og:title">
+    <meta content="random math project" property="og:description">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="content">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="icon" href="assets/img/favicon.png" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading">
+        <span>
+            <h1>Loading...</h1>
+        </span>
+    </div>
+
+    <span style="z-index: 2; position: fixed;">
+        Neighbors
+        <br><span style="font-size: smaller; opacity: 0.2;">Megarion</span> 
+    </span>
+
+    <span style="z-index: 2; top: 60px; position: fixed;">
+        <button id="infoButton">
+            <img src="assets/img/info.png" style="width: 25px; height: 25px;" id="infoButtonImg">
+        </button>
+    </span>
+
+    <div id="main">
+        <div class="sel">
+            <div id="cover">
+            </div>
+            <div>
+                <!-- Node Selection -->
+                <span>Select type:</span>
+                <canvas id="nodeSelectionDisplay" style="vertical-align: middle;"></canvas>
+                <select id="nodeSelection">
+                    <option value="person"> Person </option>
+                    <option value="wall">   Wall   </option>
+                    <option value="blank">  Empty  </option>
+                </select>
+                <br><br>
+                <button id="clearButton" style="font-size: medium; width: 120px; height: 25px;">Clear Board</button>
+
+                <br><br><br>
+
+                <!-- Process -->
+                <button id="processButton" style="background-color: #00000000; border: none;">
+                    <img src="assets/img/go.png" style="width: 75px; height: 75px;">
+                </button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="fillGrid">
+                <div>
+                    <div id="mainCanvas">
+                        <!-- Grid (canvas) -->
+                        <canvas id="canvas" width="0" height="0"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="information">
+                <h1>Neighborhood Simulator</h1>
+                <p>This is a person
+                    <img src="assets/img/person.png" style="width: 25px; height: 25px; vertical-align: middle; padding: 5px;">. 
+                    They are satisfied only if they have exactly 3 to 5
+                    <img src="assets/img/person.png" style="width: 25px; height: 25px; vertical-align: middle; padding: 5px;">
+                    next to them.
+                </p>
+
+                <p>Upon pressing 
+                    <img src="assets/img/go.png" style="width: 25px; height: 25px; vertical-align: middle; padding: 5px;">,
+                    the program will move the people so that there are as much satisfied people as possible.
+                </p>
+
+                <p>Each unsatisfied person will find an availible place (no 
+                    <img src="assets/img/wall.png" style="width: 25px; height: 25px; vertical-align: middle; padding: 5px;">
+                    or
+                    <img src="assets/img/person.png" style="width: 25px; height: 25px; vertical-align: middle; padding: 5px;">
+                    ) nearest to them with just enough 
+                    <img src="assets/img/person.png" style="width: 25px; height: 25px; vertical-align: middle; padding: 5px;">.
+                </p>
+
+                <p>
+                    <i>Most of the time, the program can't satisfy everyone.</i>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
