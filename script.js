@@ -496,6 +496,10 @@ $(document).ready(function () {
         navigateToggle();
     });
 
+    $("#githubButton").click(function () {
+        window.open("https://github.com/Megarion/neighbors");
+    });
+
     tick();
 
     $("#loading").fadeOut("slow");
